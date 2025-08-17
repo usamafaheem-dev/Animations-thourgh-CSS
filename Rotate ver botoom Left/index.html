@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+      .main-div {
+        border: 2px solid red;
+        width: 200px;
+        height: 200px;
+      
+      }
+      #scale-up {
+        width: 200px;
+        height: 200px;
+        background-color: salmon;
+      }
+
+      @keyframes scaleup {
+        0% {
+          transform: rotate(0deg);
+
+          transform-origin: 0% 100%;
+        }
+
+        100% {
+          transform: rotate(-360deg);
+
+          transform-origin: 0% 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="main-div">
+      <div id="scale-up"></div>
+    </div>
+    <br /><br />
+
+    <button id="scale-button">click to show animation</button>
+
+    <script>
+      const anim = document.getElementById("scale-button");
+      const animDiv = document.getElementById("scale-up");
+
+      anim.addEventListener("click", function () {
+        animDiv.style.animation = "none";
+        anim.offsetHeight;
+        animDiv.style.animation = "scaleup 2s ease both";
+      });
+    </script>
+  </body>
+</html>

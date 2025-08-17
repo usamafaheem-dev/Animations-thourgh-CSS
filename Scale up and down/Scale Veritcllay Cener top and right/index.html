@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation</title>
+    <style>
+      body {
+        display: flex;
+        gap: 10px;
+      }
+      .first {
+        border: 2px solid red;
+        width: 200px;
+        height: 200px;
+        padding: 40px;
+      }
+      .scale-up1,
+      .scale-up2,
+      .scale-up3 {
+      
+        width: 200px;
+        height: 160px;
+        background-color: rgb(147, 146, 134);
+        border: 2px solid black;
+        background: url("./pak\ flag.avif")  center no-repeat ;
+        background-size: cover;
+      
+      }
+
+      button {
+        background: linear-gradient(to left, green, blue, orange);
+        padding: 5px 10px;
+        border-radius: 3px;
+        color: white;
+        transition: background 1s ease-in-out;
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+      }
+      button:hover {
+        background: linear-gradient(to left, orange, blue, green);
+      }
+
+      @keyframes scaleup1 {
+        0% {
+          transform: scaleY(0);
+          transform-origin: 50% 0%;
+        }
+        100% {
+          transform: scaleY(1);
+          transform-origin: 50% 0%;
+        }
+      }
+      @keyframes scaleup2 {
+        0% {
+          transform: scaleY(0);
+          transform-origin: 50% 50%;
+        }
+        100% {
+          transform: scaleY(1);
+          transform-origin: 50% 50%;
+        }
+     
+      }
+      @keyframes scaleup3 {
+        0% {
+          transform: scaleY(0);
+          transform-origin: 50% 100%;
+        }
+        100% {
+          transform: scaleY(1);
+          transform-origin: 50% 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first">
+      <div id="scale-up1" class="scale-up1"></div>
+      <button id="scale-button1">animate to top</button>
+    </div>
+
+    <div class="first">
+      <div id="scale-up2" class="scale-up2"></div>
+      <button id="scale-button2">animate fom center</button>
+    </div>
+
+    <div class="first">
+      <div id="scale-up3" class="scale-up3"></div>
+      <button id="scale-button3">animate to bottom</button>
+    </div>
+
+    <script>
+      const anim1 = document.getElementById("scale-button1");
+      const anim2 = document.getElementById("scale-button2");
+      const anim3 = document.getElementById("scale-button3");
+
+      const animDiv1 = document.getElementById("scale-up1");
+      const animDiv2 = document.getElementById("scale-up2");
+      const animDiv3 = document.getElementById("scale-up3");
+
+      anim1.addEventListener("click", function () {
+        animDiv1.style.animation = "none";
+        animDiv1.offsetHeight;
+        animDiv1.style.animation = "scaleup1 2s ease-in-out";
+      });
+
+      anim2.addEventListener("click", function () {
+        animDiv2.style.animation = "none";
+        animDiv2.offsetHeight;
+        animDiv2.style.animation = "scaleup2 2s ease-in-out";
+      });
+
+      anim3.addEventListener("click", function () {
+        animDiv3.style.animation = "none";
+        animDiv3.offsetHeight;
+        animDiv3.style.animation = "scaleup3 2s ease-in-out";
+      });
+    </script>
+  </body>
+</html>

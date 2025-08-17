@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scale Up to RIght</title>
+     <title>animation</title>
     <style>
       .main-div {
         border: 2px solid red;
@@ -13,20 +13,20 @@
       #scale-up {
         width: 200px;
         height: 200px;
-        background-color: brown;
+        background-color: blue;
       }
 
       @keyframes scaleup {
         0% {
-          transform: scale(0.5);
+            transform: scale(0);
 
-          transform-origin: 100% 0%;
+          transform-origin: 100% 50%;
         }
 
         100% {
-          transform: scale(1);
+            transform: scale(1);
 
-          transform-origin: 100% 0%;
+          transform-origin: 100% 50%;
         }
       }
     </style>
