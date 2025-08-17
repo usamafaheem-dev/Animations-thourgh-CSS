@@ -20,17 +20,19 @@
         border: 2px solid red;
       }
       .inner-div:hover{
-          animation: rotate 2s ease-in-out forwards;
-          
+          /* animation: rotate 2s ease-in-out forwards; */
+           /* transform: rotateY(180deg) */
 
       }
+      
 
       .inner-div {
         width: 200px;
         height: 200px;
         position: relative;
         transform-style: preserve-3d;
-          transition: transform 1s ease-in-out; 
+        animation: rotate 4s ease-in-out forwards ; 
+          /* transition: transform 4s ease-in-out;  */
       }
 
       .box {
@@ -42,7 +44,7 @@
         align-items: center;
         background-color: lightblue;
         border: 1px solid blue;
-        transition: transform 0.5s ease-in-out;
+        /* transition: transform 02s ease-in-out; */
          backface-visibility: hidden;
       }
       .box-a {
@@ -59,8 +61,11 @@
           transform: rotateY(0deg);
           transform-origin: 50% 50%;
         }
-        100% {
+        50% {
           transform: rotateY(180deg);
+           transform-origin: 50% 50%;
+        }  100% {
+          transform: rotateY(0deg);
            transform-origin: 50% 50%;
         }
       }
